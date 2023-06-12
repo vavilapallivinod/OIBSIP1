@@ -1,0 +1,89 @@
+body{
+    background-image: url("https://img.freepik.com/premium-photo/top-view-desk-concept-with-calculator_23-2148604951.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 270px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color:black;
+    opacity:0.8;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.calculator input {
+    grid-column: span 5;
+    height: 50px;
+    text-align: right;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color:#f2f2f2;
+}
+
+.calculator button {
+    height: 30px;
+    font-size: 18px;
+    box-shadow:inset  0 1px 6px rgba(208, 30, 160, 0.1);
+    border-radius: 30px;
+    border:1px solid black;
+    cursor: pointer;
+
+}
+
+.calculator button:hover {
+    background-color:lightsteelblue;
+box-shadow:0px 6px 12px rgba(161, 43, 106, 0.3);
+transform: translateY(-3px);
+
+}
+
+.calculator button:active {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#color{
+    font-weight: bold;
+}
+#color:hover{
+    background-color:lightgrey;
+}
+#ac{
+    background-color: orangered;
+    font-size: medium;
+    font-weight: bold;
+}
+#del{
+    background-color:lightcoral;
+}
+#ac:hover,#del:hover{
+    background-color:rgb(46, 191, 46);
+}
+.calculator button#equal {
+ grid-column: span 3;
+height: 50px;
+font-size: 18px;
+border: none;
+background-color: #4CAF50;
+color: #fff;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+cursor: pointer;
+}
+.calculator button#equal:hover{
+background-color: rgb(39, 39, 223);
+}
+h1{
+font-style: oblique;
+text-decoration: underline;
+color:black;
+font-size: 2em;
+}

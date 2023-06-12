@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="calculate.css">
+</head>
+<body>
+    <div >
+        <h1 align="center">Calculator</h1>
+    </div>
+<div class="calculator">
+    <input type="text" id="result" disabled>
+    <button onclick="calculateRoot()" id="color">√</button>
+    <button onclick="appendToResult('**2')" id="color">x²</button>
+    <button onclick="appendToResult('**3')" id="color">x³</button>
+    <button onclick="appendToResult('+')" id="color">+</button>
+    <button onclick="clearResult()" id="ac" title="all clear">AC</button>
+    <button onclick="appendToResult('Math.log10(')" id="color">log</button>
+    <button onclick="appendToResult('Math.log(')" id="color">ln</button>
+    <button onclick="appendToResult('Math.E')" id="color">e</button>
+    <button onclick="appendToResult('-')" id="color">-</button>
+    <button onclick="backspace()" id="del" title="backspace">DEL</button>
+    <button onclick="calculateFactorial()" id="color">x!</button>
+    <button onclick="appendToResult('**')" id="color">x^y</button>
+    <button onclick="appendToResult('**(-1)')" id="color">1/x</button>
+    <button onclick="appendToResult('*')" id="color">*</button>
+    <button onclick="appendToResult('%')" id="color">R</button>
+    <button onclick="appendToResult(7)">7</button>
+    <button onclick="appendToResult(8)">8</button>
+    <button onclick="appendToResult(9)">9</button>
+    <button onclick="appendToResult('/')" id="color">/</button>
+    <button onclick="calculatePercent()" id="color">%</button>
+    <button onclick="appendToResult(4)">4</button>
+    <button onclick="appendToResult(5)">5</button>
+    <button onclick="appendToResult(6)">6</button>
+    <button onclick="appendToResult('(')" id="color">(</button>
+    <button onclick="appendToResult(')')" id="color">)</button>
+    <button onclick="appendToResult(1)">1</button>
+    <button onclick="appendToResult(2)">2</button>
+    <button onclick="appendToResult(3)">3</button>
+    <button onclick="appendToResult('Math.PI')" id="color">π</button>
+    <button onclick="appendToResult('**(1/3)')" id="color">∛</button>
+    <button onclick="appendToResult(0)">0</button>
+    <button onclick="appendToResult('.')">.</button>
+    <button onclick="calculate()" id="equal" title="result">=</button>
+    
+</div>
+<script>
+var result = document.getElementById("result");
+
+function appendToResult(value) {
+    result.value += value;
+}
+
+function clearResult() {
+    result.value = '';
+}
+
+function backspace() {
+    result.value = result.value.slice(0, -1);
+}
+
+function calculate() {
+    try {
+        var expression = result.value;
+        var resultValue = eval(expression);
+        result.value = resultValue;
+    } catch (error) {
+        result.value = 'Error';
+    }
+}
+
+function calculateFactorial() {
+    var num = parseInt(result.value);
+    if (!isNaN(num)) {
+        var factorial = 1;
+        for (var i = 2; i <= num; i++) {
+            factorial *= i;
+        }
+        result.value = factorial;
+    } else {
+        result.value = 'Error';
+    }
+}
+
+function calculateRoot() {
+    var num = parseFloat(result.value);
+    if (!isNaN(num)) {
+        result.value = Math.sqrt(num);
+    }
+}
+
+
+function calculatePercent(){
+    result.value/=100;
+
+}
+</script>
+</body>
+</html>
